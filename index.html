@@ -23,13 +23,28 @@
   <main id="view"></main>
 
   <nav class="tabbar">
-    <button class="tab" data-tab="itinerary" type="button">
-      <span class="tab-ico">🗓️</span><span class="tab-label">Itinerary</span>
+    <button class="tab" data-tab="plan" type="button">
+      <span class="tab-ico">🗓️</span><span class="tab-label">Plan</span>
     </button>
-    <button class="tab" data-tab="places" type="button">
-      <span class="tab-ico">📍</span><span class="tab-label">Places</span>
+    <button class="tab" data-tab="favorites" type="button">
+      <span class="tab-ico">⭐</span><span class="tab-label">Favorites</span>
     </button>
   </nav>
+
+  <!-- Picker: browse favorites and drop them into the selected day -->
+  <div id="picker" class="sheet hidden" role="dialog" aria-modal="true">
+    <div class="sheet-backdrop" data-close-picker></div>
+    <div class="sheet-body picker-body">
+      <div class="sheet-handle"></div>
+      <div class="picker-head">
+        <h2 id="pickerTitle">Add stops</h2>
+        <button class="btn ghost" type="button" data-close-picker>Done</button>
+      </div>
+      <input class="search" id="pickerSearch" placeholder="🔎 Search favorites" autocomplete="off" />
+      <div class="filters" id="pickerFilters"></div>
+      <div id="pickerList"></div>
+    </div>
+  </div>
 
   <!-- Place add/edit sheet -->
   <div id="sheet" class="sheet hidden" role="dialog" aria-modal="true">
