@@ -1,7 +1,7 @@
 /* Seed data + config for the Bay Area trip planner.
-   Everything here is the *starter* catalog. Users can add, edit, hide,
-   and reorder from inside the app — their changes live in the URL/localStorage,
-   never here. */
+   This catalog is a personal list of favorites — the starter set a friend
+   sees so they know what I love doing here. Users can add, edit, hide, and
+   reorder from inside the app; their changes live in the URL/localStorage. */
 
 window.TRIP = {
   // June 19 (Fri) through June 23 (Tue) 2026 — 5 days.
@@ -22,53 +22,53 @@ window.REGIONS = {
 window.CATEGORIES = {
   sight: { label: "Sightseeing", emoji: "📸" },
   food: { label: "Food", emoji: "🍽️" },
-  coffee: { label: "Coffee", emoji: "☕" },
+  coffee: { label: "Coffee / Cafe", emoji: "☕" },
+  dessert: { label: "Dessert / Bakery", emoji: "🍰" },
   outdoors: { label: "Outdoors", emoji: "🌳" },
   view: { label: "Viewpoint", emoji: "🌉" },
   museum: { label: "Museum", emoji: "🏛️" },
   culture: { label: "Culture", emoji: "🎭" },
+  activity: { label: "Activity", emoji: "🎯" },
   nightlife: { label: "Nightlife", emoji: "🍸" },
   shopping: { label: "Shopping", emoji: "🛍️" },
 };
 
 // id, name, category, region, emoji (optional override), note, query (for maps)
 window.SEED_PLACES = [
-  // --- San Francisco ---
-  { id: "ggbridge", name: "Golden Gate Bridge", cat: "view", region: "sf", emoji: "🌉", note: "Iconic. Best from the Welcome Center or Battery Spencer.", query: "Golden Gate Bridge San Francisco" },
-  { id: "ferrybldg", name: "Ferry Building Marketplace", cat: "food", region: "sf", note: "Artisan food hall on the water. Great Sat farmers market.", query: "Ferry Building Marketplace San Francisco" },
-  { id: "ggpark", name: "Golden Gate Park", cat: "outdoors", region: "sf", note: "Huge park — gardens, bison, museums inside.", query: "Golden Gate Park San Francisco" },
-  { id: "alamo", name: "Painted Ladies (Alamo Square)", cat: "sight", region: "sf", note: "The postcard Victorian row.", query: "Alamo Square San Francisco" },
-  { id: "dolores", name: "Dolores Park", cat: "outdoors", region: "sf", note: "Sunny hangout park, skyline views, very local.", query: "Dolores Park San Francisco" },
-  { id: "wharf", name: "Fisherman's Wharf & Pier 39", cat: "sight", region: "sf", note: "Sea lions, clam chowder, touristy fun.", query: "Pier 39 San Francisco" },
-  { id: "chinatown", name: "Chinatown", cat: "culture", region: "sf", note: "Oldest in North America. Dim sum + alleys.", query: "Chinatown San Francisco" },
-  { id: "coit", name: "Coit Tower", cat: "view", region: "sf", note: "360° city views + WPA murals. Walk the Filbert Steps.", query: "Coit Tower San Francisco" },
-  { id: "deyoung", name: "de Young Museum", cat: "museum", region: "sf", note: "Art + a free observation tower.", query: "de Young Museum San Francisco" },
-  { id: "tartine", name: "Tartine Bakery", cat: "food", region: "sf", note: "Legendary bakery in the Mission.", query: "Tartine Bakery San Francisco" },
-  { id: "twinpeaks", name: "Twin Peaks", cat: "view", region: "sf", note: "Best panoramic view of the whole city.", query: "Twin Peaks San Francisco" },
-  { id: "landsend", name: "Lands End Trail", cat: "outdoors", region: "sf", note: "Coastal cliff trail with bridge views + ruins.", query: "Lands End Lookout San Francisco" },
-  { id: "castro", name: "The Castro", cat: "culture", region: "sf", note: "Historic LGBTQ neighborhood.", query: "Castro District San Francisco" },
-  { id: "bluebottle", name: "Blue Bottle Coffee (Mint Plaza)", cat: "coffee", region: "sf", note: "Bay Area third-wave coffee staple.", query: "Blue Bottle Coffee Mint Plaza San Francisco" },
-  { id: "swan", name: "Swan Oyster Depot", cat: "food", region: "sf", note: "Tiny 100-yr-old seafood counter. Expect a line.", query: "Swan Oyster Depot San Francisco" },
+  // ---------------- Marin / North Bay ----------------
+  { id: "mttam", name: "Mt Tam", cat: "outdoors", region: "marin", emoji: "🥾", note: "My go-to for hikes and unreal Bay views — we could time it for sunset up top.", query: "Mount Tamalpais State Park" },
+  { id: "alamere", name: "Alamere Falls Trail", cat: "outdoors", region: "marin", emoji: "💦", note: "A waterfall that spills right onto the beach — Javi's rec. Heads up: it's a LONG hike lol (~8 mi round trip). Worth it on a clear day.", query: "Alamere Falls Trailhead Bolinas" },
 
-  // --- Marin / North Bay ---
-  { id: "muir", name: "Muir Woods", cat: "outdoors", region: "marin", emoji: "🌲", note: "Old-growth redwoods. Reserve parking ahead.", query: "Muir Woods National Monument" },
-  { id: "sausalito", name: "Sausalito", cat: "sight", region: "marin", note: "Charming waterfront town across the bridge. Ferry back to SF.", query: "Sausalito California" },
-  { id: "ptreyes", name: "Point Reyes", cat: "outdoors", region: "marin", note: "Dramatic coast + lighthouse. Full-day trip.", query: "Point Reyes National Seashore" },
+  // ---------------- San Francisco — Activities ----------------
+  { id: "ggpark", name: "Golden Gate Park", cat: "outdoors", region: "sf", note: "I spend a lot of weekends here — gardens, trails, museums. Easy to wander for hours.", query: "Golden Gate Park San Francisco" },
+  { id: "landsend", name: "Lands End", cat: "outdoors", region: "sf", note: "My favorite coastal walk in the city — cliffs, bridge views, an old shipwreck at low tide.", query: "Lands End Lookout San Francisco" },
+  { id: "bakerbeach", name: "Baker Beach", cat: "outdoors", region: "sf", emoji: "🏖️", note: "Classic beach hang with a straight-on Golden Gate view.", query: "Baker Beach San Francisco" },
+  { id: "oceanbeach", name: "Ocean Beach Bonfire", cat: "outdoors", region: "sf", emoji: "🔥", note: "If it's clear, let's grab firewood and do a sunset bonfire on the sand.", query: "Ocean Beach San Francisco" },
+  { id: "worldcup", name: "World Cup Viewing", cat: "activity", region: "sf", emoji: "⚽", note: "It's World Cup season! Let's find a packed bar and watch a match with the city.", query: "sports bars San Francisco" },
 
-  // --- East Bay ---
-  { id: "berkeley", name: "UC Berkeley Campus", cat: "sight", region: "eastbay", note: "Climb the Campanile for bay views.", query: "UC Berkeley" },
-  { id: "merritt", name: "Lake Merritt (Oakland)", cat: "outdoors", region: "eastbay", note: "Urban lagoon loop, lively scene.", query: "Lake Merritt Oakland" },
-  { id: "cheeseboard", name: "Cheese Board Pizza", cat: "food", region: "eastbay", note: "One pizza a day, always a line, always worth it.", query: "Cheese Board Pizza Berkeley" },
+  // ---------------- San Francisco — Restaurants ----------------
+  { id: "khaotiew", name: "Khao Tiew", cat: "food", region: "sf", note: "One of my favorite Thai spots in the city.", query: "Khao Tiew San Francisco" },
+  { id: "capital", name: "Capital Restaurant", cat: "food", region: "sf", note: "Get the salt & pepper chicken wings — trust me.", query: "Capital Restaurant San Francisco" },
+  { id: "tacoselpatron", name: "Tacos El Patron", cat: "food", region: "sf", emoji: "🌮", note: "My taco go-to.", query: "Tacos El Patron San Francisco" },
+  { id: "zandy", name: "Z&Y", cat: "food", region: "sf", emoji: "🌶️", note: "Fiery Sichuan in Chinatown — order the chili dishes.", query: "Z & Y Restaurant San Francisco" },
+  { id: "lily", name: "Lily", cat: "food", region: "sf", note: "Great spot — lunch only, so plan around it.", query: "Lily Restaurant San Francisco" },
+  { id: "minipotstickers", name: "Mini Potstickers", cat: "food", region: "sf", emoji: "🥟", note: "Cheap, delicious potstickers — a little gem.", query: "Mini Potstickers San Francisco" },
+  { id: "ahmaskitchen", name: "Ah Ma's Kitchen", cat: "food", region: "sf", note: "Cozy Taiwanese comfort food.", query: "Ah Ma's Kitchen San Francisco" },
 
-  // --- Peninsula ---
-  { id: "stanford", name: "Stanford University", cat: "sight", region: "peninsula", note: "Beautiful campus + Rodin sculpture garden.", query: "Stanford University" },
-  { id: "filoli", name: "Filoli Gardens", cat: "outdoors", region: "peninsula", note: "Historic estate + formal gardens.", query: "Filoli Woodside" },
+  // ---------------- Cafe / Dessert Spots ----------------
+  { id: "arsicault", name: "Arsicault Bakery", cat: "dessert", region: "sf", emoji: "🥐", note: "Some of the best croissants in the country, no joke.", query: "Arsicault Bakery San Francisco" },
+  { id: "hinrg", name: "Hi NRG", cat: "coffee", region: "sf", note: "A cafe I like — solid pick-me-up stop.", query: "Hi NRG cafe San Francisco" },
+  { id: "goldengoat", name: "Golden Goat", cat: "coffee", region: "sf", note: "Easy coffee stop I like.", query: "Golden Goat Coffee San Francisco" },
+  { id: "saltandstraw", name: "Salt & Straw", cat: "dessert", region: "sf", emoji: "🍦", note: "Fun, inventive ice cream flavors.", query: "Salt & Straw San Francisco" },
+  { id: "tadaima", name: "Tadaima", cat: "coffee", region: "sf", emoji: "🍵", note: "Cute Japanese cafe — matcha and treats.", query: "Tadaima San Francisco" },
+  { id: "stonemill", name: "Stonemill Matcha", cat: "coffee", region: "sf", emoji: "🍵", note: "My matcha spot in the Mission.", query: "Stonemill Matcha San Francisco" },
+  { id: "tartine", name: "Tartine Bakery", cat: "dessert", region: "sf", emoji: "🥐", note: "Iconic SF bakery — the morning bun is a must.", query: "Tartine Bakery San Francisco" },
 
-  // --- South Bay ---
-  { id: "applepark", name: "Apple Park Visitor Center", cat: "sight", region: "southbay", note: "AR model of the spaceship HQ + cafe/store.", query: "Apple Park Visitor Center Cupertino" },
-  { id: "chm", name: "Computer History Museum", cat: "museum", region: "southbay", note: "Best tech history museum anywhere.", query: "Computer History Museum Mountain View" },
+  // ---------------- Things to do together ----------------
+  { id: "cookdinner", name: "Cook Dinner Together", cat: "activity", region: "sf", emoji: "🍳", note: "Let's cook a meal together at mine — my favorite way to catch up.", query: "" },
+  { id: "japantown", name: "Japantown", cat: "culture", region: "sf", emoji: "🎎", note: "Let's wander Japantown — shops, snacks, matcha.", query: "Japantown San Francisco" },
 
-  // --- Coast ---
-  { id: "hmb", name: "Half Moon Bay", cat: "outdoors", region: "coast", emoji: "🏖️", note: "Beach town over the hill from the peninsula.", query: "Half Moon Bay California" },
-  { id: "santacruz", name: "Santa Cruz Beach Boardwalk", cat: "outdoors", region: "coast", note: "Classic seaside amusement park (~1.5h from SF).", query: "Santa Cruz Beach Boardwalk" },
+  // ---------------- Broader Bay Area ----------------
+  { id: "topgolf", name: "Topgolf", cat: "activity", region: "southbay", emoji: "⛳", note: "Fun group activity even if you've never swung a club.", query: "Topgolf San Jose" },
+  { id: "stanford", name: "Stanford Tour", cat: "sight", region: "peninsula", note: "I'll show you around campus — it's a beautiful place to walk.", query: "Stanford University" },
 ];
