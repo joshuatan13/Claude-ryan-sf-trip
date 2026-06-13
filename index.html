@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e0567a" />
+  <title>Bay Area Trip Planner</title>
+  <meta name="description" content="Plan a fun Bay Area itinerary — pick places, build days, share a link." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌉</text></svg>" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="title-block">
+        <h1>🌉 Bay Area Trip</h1>
+        <p id="dateRange" class="subtitle"></p>
+      </div>
+      <button id="shareBtn" class="share-btn" type="button">🔗 Share</button>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <nav class="tabbar">
+    <button class="tab" data-tab="itinerary" type="button">
+      <span class="tab-ico">🗓️</span><span class="tab-label">Itinerary</span>
+    </button>
+    <button class="tab" data-tab="places" type="button">
+      <span class="tab-ico">📍</span><span class="tab-label">Places</span>
+    </button>
+  </nav>
+
+  <!-- Place add/edit sheet -->
+  <div id="sheet" class="sheet hidden" role="dialog" aria-modal="true">
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-body">
+      <div class="sheet-handle"></div>
+      <h2 id="sheetTitle">Add a place</h2>
+      <form id="placeForm">
+        <input type="hidden" id="f-id" />
+        <label>Name<input id="f-name" required maxlength="80" placeholder="e.g. Bi-Rite Creamery" /></label>
+        <div class="row">
+          <label>Category<select id="f-cat"></select></label>
+          <label>Area<select id="f-region"></select></label>
+        </div>
+        <div class="row">
+          <label class="emoji-field">Emoji<input id="f-emoji" maxlength="4" placeholder="🍦" /></label>
+          <label class="grow">Maps search<input id="f-query" placeholder="Defaults to the name" /></label>
+        </div>
+        <label>Note<textarea id="f-note" rows="2" maxlength="200" placeholder="Why it's worth it…"></textarea></label>
+        <div class="sheet-actions">
+          <button type="button" class="btn ghost" data-close>Cancel</button>
+          <button type="submit" class="btn primary">Save place</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
