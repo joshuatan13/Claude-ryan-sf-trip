@@ -45,6 +45,17 @@ body {
 }
 .title-block h1 { font-size: 1.25rem; margin: 0; letter-spacing: -0.01em; }
 .subtitle { margin: 2px 0 0; font-size: 0.8rem; opacity: 0.92; }
+.save-badge {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+.save-badge.cloud { background: rgba(255, 255, 255, 0.32); }
 .share-btn {
   border: 0;
   background: rgba(255, 255, 255, 0.22);

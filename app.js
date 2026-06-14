@@ -42,10 +42,15 @@
     while (b64.length % 4) b64 += "=";
     return JSON.parse(decodeURIComponent(escape(atob(b64))));
   }
+  let pendingTripId = null; // set when the URL is a #t=<tripId> sync link
+  function loadLocal() {
+    try { const raw = localStorage.getItem(LS_KEY); if (raw) mergeState(JSON.parse(raw)); } catch (e) {}
+  }
   function loadState() {
     const hash = location.hash.replace(/^#/, "");
+    if (hash.indexOf("t=") === 0) { pendingTripId = hash.slice(2); loadLocal(); return; }
     if (hash) { try { mergeState(decode(hash)); return; } catch (e) { console.warn("Bad link:", e); } }
-    try { const raw = localStorage.getItem(LS_KEY); if (raw) mergeState(JSON.parse(raw)); } catch (e) {}
+    loadLocal();
   }
   function mergeState(s) {
     state.i = Array.isArray(s.i) ? s.i.slice(0, TRIP.days) : state.i;
@@ -56,7 +61,47 @@
   }
   function persist() {
     try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
-    history.replaceState(null, "", "#" + encode(state));
+    if (window.Sync && Sync.enabled) {
+      history.replaceState(null, "", "#t=" + Sync.tripId);
+      Sync.push(state);
+    } else {
+      history.replaceState(null, "", "#" + encode(state));
+    }
+  }
+
+  // ---------- Sync wiring (auto-sync when firebase-config.js is filled in) ----------
+  let pendingRender = false;
+  function guardedRender() {
+    // don't yank a field out from under someone who's typing/picking a time
+    const a = document.activeElement;
+    if (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) { pendingRender = true; return; }
+    render();
+  }
+  document.addEventListener("focusout", () => {
+    if (pendingRender) { pendingRender = false; setTimeout(render, 60); }
+  });
+  function setSaveBadge(mode) {
+    const el = document.getElementById("saveBadge"); if (!el) return;
+    if (mode === "cloud") { el.textContent = "☁ Synced"; el.className = "save-badge cloud"; }
+    else if (mode === "saving") { el.textContent = "Saving…"; el.className = "save-badge"; }
+    else { el.textContent = "✓ Saved"; el.className = "save-badge"; }
+  }
+  function initSync() {
+    if (!window.Sync || !Sync.configured()) { setSaveBadge("local"); return; }
+    setSaveBadge("saving");
+    Sync.init({
+      tripId: pendingTripId || undefined,
+      getState: () => state,
+      onReady: (id) => { history.replaceState(null, "", "#t=" + id); setSaveBadge("cloud"); },
+      onRemote: (rs) => {
+        mergeState(rs);
+        try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
+        setSaveBadge("cloud"); guardedRender();
+      },
+      onSaving: () => setSaveBadge("saving"),
+      onSaved: () => setSaveBadge("cloud"),
+      onError: () => setSaveBadge("local"),
+    });
   }
 
   // ---------- Catalog ----------
@@ -612,7 +657,8 @@ Section headers like 'Marin', 'Coffee Spots', or 'Things to do together' auto-so
   // ---------- Sharing ----------
   async function share() {
     persist();
-    const url = location.href, text = "Here's our Bay Area plan — open it to view & tweak:";
+    const url = (window.Sync && Sync.enabled) ? Sync.shareUrl() : location.href;
+    const text = "Here's our Bay Area plan — open it to view & tweak:";
     try { if (navigator.share) { await navigator.share({ title: "Bay Area Trip", text, url }); return; } } catch (e) {}
     try { await navigator.clipboard.writeText(url); toast("Link copied — paste it to your friend 📲"); }
     catch (e) { prompt("Copy this link:", url); }
@@ -730,5 +776,5 @@ Section headers like 'Marin', 'Coffee Spots', or 'Things to do together' auto-so
   // ---------- Boot ----------
   document.getElementById("dateRange").textContent =
     `${dayDate(0).mon} ${dayDate(0).day} – ${dayDate(TRIP.days - 1).mon} ${dayDate(TRIP.days - 1).day}, 2026 · ${TRIP.days} days`;
-  fillSelects(); loadState(); render();
+  fillSelects(); loadState(); render(); initSync();
 })();

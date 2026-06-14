@@ -24,6 +24,23 @@ encoded in a **shareable link** you can text to anyone.
   Your friend opens it, tweaks it, and shares a new link back. Auto-saved
   to the browser too.
 
+## Auto-sync (optional shared backend)
+
+By default the app is link-only: state lives in the URL + each browser's
+local storage, and you share changes by sending the link. Turn on **auto-sync**
+to have you and your friends always see the latest with no link-passing:
+
+1. Follow the steps in `firebase-config.js` (create a free Firebase project,
+   enable Realtime Database, paste the web config). ~2 minutes, no app logins.
+2. That's it. The app stores the whole plan in one cloud doc keyed by an
+   unguessable **trip ID** that rides in the share link (`#t=<id>`). Edits
+   from anyone with the link sync automatically (last-write-wins). A badge in
+   the header shows **☁ Synced** vs **✓ Saved** (link-only).
+
+The Firebase web config is public by design — not a secret. Access is scoped
+by the unguessable trip ID, so only people you send the link to reach a trip.
+If the config is blank, the app silently runs in link-only mode.
+
 ## How sharing works
 
 State (your custom places, edits, hidden seeds, and the day-by-day
