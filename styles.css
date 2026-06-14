@@ -472,3 +472,79 @@ main {
 }
 .pick-row.added .pick-add { color: #34a853; font-size: 0.9rem; }
 .pick-row.added { opacity: 0.92; }
+.pick-map { display: inline-block; margin-top: 6px; font-size: 0.76rem; font-weight: 600; color: var(--brand); text-decoration: none; }
+
+/* ---------- Plan: times + calendar ---------- */
+.time-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand);
+  padding: 1px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.time-group { display: flex; align-items: center; gap: 4px; }
+.time-input[type="time"] {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 6px;
+  font-size: 0.8rem;
+  background: var(--card);
+  color: var(--ink);
+  font-family: inherit;
+}
+.dash { color: var(--muted); font-weight: 700; }
+.note-input {
+  flex-basis: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.82rem;
+  background: var(--bg);
+  margin-top: 8px;
+}
+.day-actions .btn { padding: 11px 12px; font-size: 0.85rem; }
+.btn.cal { background: #4285f4; color: #fff; flex: 1; text-align: center; border: 0; cursor: pointer; }
+.trip-export {
+  display: block;
+  text-align: center;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 12px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+/* ---------- Map tab ---------- */
+.map-wrap {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px;
+  margin-bottom: 12px;
+}
+.baymap { width: 100%; height: auto; display: block; border-radius: 12px; }
+.baymap .pin { cursor: pointer; transition: r 0.1s; }
+.baymap .pin.sel { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4)); }
+.rlabel { font-size: 8px; font-weight: 700; opacity: 0.55; text-anchor: middle; pointer-events: none; }
+.ocean-label { font-size: 8px; fill: #7fb4cc; font-style: italic; opacity: 0.8; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.map-legend .filter-chip { display: flex; align-items: center; gap: 6px; }
+.map-legend .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.map-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 16px;
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+.map-info { margin-bottom: 24px; }
+.map-info-actions { display: flex; gap: 8px; margin-top: 12px; }
+.map-info-actions .btn { flex: 1; padding: 11px 10px; font-size: 0.85rem; }
+.map-info-actions .btn.route { background: #34a853; }

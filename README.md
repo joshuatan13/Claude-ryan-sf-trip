@@ -6,18 +6,23 @@ encoded in a **shareable link** you can text to anyone.
 
 ## What it does
 
-- **📍 Places tab** — a pre-seeded catalog of Bay Area favorites you can
-  search, filter by area, and add your own to (with an in-app editor).
-- **🗓️ Itinerary tab** — five day-chips (Fri Jun 19 → Tue Jun 23). Add
-  stops to any day, reorder them (drag, or ↑/↓ buttons), give each a
-  time/note, and remove what you don't want.
-- **🧭 Location aware** — each day shows the areas it covers and warns if
-  it's spread out (lots of driving). "Open day route in Maps" launches
-  Google Maps with all the day's stops as waypoints — real directions, no
-  API key needed.
-- **🔗 Share** — the Share button copies a link that contains the entire
-  plan. Your friend opens it on their phone, tweaks it, and shares a new
-  link back. Everything also auto-saves to the browser locally.
+- **⭐ Favorites tab (input side)** — quick-add with auto-guessed category
+  + area, plus a bulk-paste box that parses a messy list (detects section
+  headers, pulls notes from parentheses, "Name: place" → "Rec by"). Inline
+  dropdowns reclassify at scale. Every place has a Google Maps link.
+- **🗓️ Plan tab (itinerary side)** — five day-chips (Fri Jun 19 → Tue Jun
+  23). Add stops via a picker, reorder (drag or ↑/↓), set **start/end
+  times** per stop, add notes, and remove.
+- **🗺️ Map tab** — a self-contained SVG map of the Bay (no libraries, no
+  API key) placing every favorite by area; tap a pin to open it in Maps.
+- **📅 Calendar** — each stop has an "Add to Google Calendar" link, and you
+  can download a `.ics` of a day or the whole trip to import into any
+  calendar (Google/Apple/Outlook). No login or backend.
+- **🧭 Location aware** — each day shows the areas it covers, warns when
+  spread out, and "Day route" opens Google Maps with the stops as waypoints.
+- **🔗 Share** — the Share button copies a link containing the entire plan.
+  Your friend opens it, tweaks it, and shares a new link back. Auto-saved
+  to the browser too.
 
 ## How sharing works
 
