@@ -174,6 +174,9 @@
   function mapUrl(p) {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query || p.name)}`;
   }
+  function webLink(p) {
+    return p.web ? `<a class="weblink" href="${esc(p.web)}" target="_blank" rel="noopener">🌐 Site</a>` : "";
+  }
   function catOptions(sel) {
     return Object.entries(CATEGORIES)
       .map(([k, v]) => `<option value="${k}" ${k === sel ? "selected" : ""}>${v.emoji} ${v.label}</option>`).join("");
@@ -297,6 +300,7 @@
               <p class="place-name">${esc(p.name)} ${range}</p>
               ${tagsHtml(p)}
               ${p.note ? `<p class="place-note">${esc(p.note)}</p>` : ""}
+              ${webLink(p)}
             </div>
           </div>
           <div class="item-controls" data-idx="${idx}">
@@ -428,6 +432,7 @@
         <div class="place"><div class="place-emoji">${emojiFor(sel)}</div>
           <div class="place-body"><p class="place-name">${esc(sel.name)}</p>${tagsHtml(sel)}
           ${sel.note ? `<p class="place-note">${esc(sel.note)}</p>` : ""}
+          ${webLink(sel)}
           <p class="place-note">${days.length ? "🗓️ Planned: " + days.join(", ") : "Not on the plan yet"}</p></div></div>
         <div class="map-info-actions">
           <a class="btn route" href="${mapUrl(sel)}" target="_blank" rel="noopener">🗺️ Open in Google Maps</a>
@@ -470,7 +475,7 @@
           <div class="pick-main">
             <div class="pick-name">${esc(p.name)}</div>${tagsHtml(p)}
             ${p.note ? `<div class="place-note">${esc(p.note)}</div>` : ""}
-            <a class="pick-map" href="${mapUrl(p)}" target="_blank" rel="noopener">🗺️ Maps</a>
+            <a class="pick-map" href="${mapUrl(p)}" target="_blank" rel="noopener">🗺️ Maps</a> ${webLink(p)}
           </div>
           <span class="pick-add">${c ? "✓ " + c : "＋"}</span>
         </div>`;
@@ -528,6 +533,7 @@ Section headers like 'Marin', 'Coffee Spots', or 'Things to do together' auto-so
             <div class="fav-main">
               <div class="fav-name">${esc(p.name)}</div>
               ${p.note ? `<div class="place-note">${esc(p.note)}</div>` : ""}
+              ${webLink(p)}
               <div class="fav-selects">
                 <select data-reclass="cat" data-id="${p.id}">${catOptions(p.cat)}</select>
                 <select data-reclass="region" data-id="${p.id}">${regionOptions(p.region)}</select>

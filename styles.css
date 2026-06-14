@@ -484,6 +484,7 @@ main {
 .pick-row.added .pick-add { color: #34a853; font-size: 0.9rem; }
 .pick-row.added { opacity: 0.92; }
 .pick-map { display: inline-block; margin-top: 6px; font-size: 0.76rem; font-weight: 600; color: var(--brand); text-decoration: none; }
+.weblink { display: inline-block; margin-top: 6px; font-size: 0.76rem; font-weight: 600; color: var(--brand); text-decoration: none; }
 
 /* ---------- Plan: times + calendar ---------- */
 .time-badge {

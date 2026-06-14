@@ -49,16 +49,36 @@ window.SEED_PLACES = [
   // ---------------- San Francisco — Restaurants ----------------
   { id: "khaotiew", name: "Khao Tiew", cat: "food", region: "sf", note: "One of my favorite Thai spots in the city.", query: "Khao Tiew San Francisco", ll: [37.746, -122.421] },
   { id: "capital", name: "Capital Restaurant", cat: "food", region: "sf", note: "Get the salt & pepper chicken wings — trust me.", query: "Capital Restaurant San Francisco", ll: [37.7959, -122.4078] },
-  { id: "tacoselpatron", name: "Tacos El Patron", cat: "food", region: "sf", emoji: "🌮", note: "My taco go-to.", query: "Tacos El Patron San Francisco", ll: [37.726, -122.435] },
-  { id: "zandy", name: "Z&Y", cat: "food", region: "sf", emoji: "🌶️", note: "Fiery Sichuan in Chinatown — order the chili dishes.", query: "Z & Y Restaurant San Francisco", ll: [37.7949, -122.4072] },
+  { id: "tacoselpatron", name: "Tacos El Patron", cat: "food", region: "sf", emoji: "🌮", note: "My taco go-to in the Mission — birria, lengua, pescado.", query: "Tacos El Patron San Francisco", web: "https://www.tacos-el-patron.com/", ll: [37.748, -122.418] },
+  { id: "zandy", name: "Z&Y", cat: "food", region: "sf", emoji: "🌶️", note: "Fiery Sichuan in Chinatown — order the chili dishes.", query: "Z & Y Restaurant San Francisco", web: "https://www.zandyrestaurant.com/", ll: [37.7949, -122.4072] },
   { id: "lily", name: "Lily", cat: "food", region: "sf", note: "Great spot — lunch only, so plan around it.", query: "Lily Restaurant San Francisco", ll: [37.798, -122.436] },
   { id: "minipotstickers", name: "Mini Potstickers", cat: "food", region: "sf", emoji: "🥟", note: "Cheap, delicious potstickers — a little gem.", query: "Mini Potstickers San Francisco", ll: [37.792, -122.412] },
-  { id: "ahmaskitchen", name: "Ah Ma's Kitchen", cat: "food", region: "sf", note: "Cozy Taiwanese comfort food.", query: "Ah Ma's Kitchen San Francisco", ll: [37.79, -122.42] },
+  { id: "ahmaskitchen", name: "Ah Ma's Kitchen", cat: "food", region: "sf", emoji: "🍗", note: "Hong Kong–style cafe in Inner Richmond. Kiln chicken is MVP; anything with salted egg (the wings!) 🤤", query: "Ah Ma's Kitchen San Francisco", web: "https://www.ahmaskitchensf.com/", ll: [37.782, -122.462] },
+
+  // ---------------- From Beli (beliapp.co/app/juswag) ----------------
+  { id: "hokkaido", name: "Hokkaido Sashimi Marketplace", cat: "food", region: "sf", emoji: "🍣", note: "Japanese sushi + grocery in Little Russia. Karaage bomb, sushi guud.", query: "Hokkaido Sashimi Marketplace San Francisco", web: "https://hokkaidosashimisf.com/", ll: [37.781, -122.466] },
+  { id: "bocconcino", name: "Bocconcino", cat: "food", region: "sf", emoji: "🍝", note: "Italian in North Beach. Chicken parmigiana + seafood ravioli.", query: "Bocconcino San Francisco", web: "https://www.bocconcinosf.com/", ll: [37.800, -122.409] },
+  { id: "masdimsum", name: "Ma's Dimsum & Cafe", cat: "food", region: "sf", emoji: "🥟", note: "Dim sum in Russian Hill.", query: "Ma's Dimsum & Cafe San Francisco", ll: [37.798, -122.418] },
+  { id: "curryhyuga", name: "Curry Hyuga", cat: "food", region: "sf", emoji: "🍛", note: "Japanese curry in the Mission — yummy and Joshua-sized 😄", query: "Curry Hyuga San Francisco", web: "https://curryhyuga.com/", ll: [37.760, -122.420] },
+  { id: "dancingyak", name: "Dancing Yak", cat: "food", region: "sf", emoji: "🥘", note: "Nepalese / Himalayan in Mission Dolores.", query: "Dancing Yak Restaurant San Francisco", web: "https://dancingyaksf.com/", ll: [37.764, -122.426] },
+  { id: "hkclaypot", name: "Hong Kong Clay Pot", cat: "food", region: "sf", emoji: "🍲", note: "Cantonese clay pot in Chinatown.", query: "Hong Kong Clay Pot Restaurant San Francisco", web: "https://hongkongclaypot.shop/", ll: [37.795, -122.407] },
+  { id: "beifang", name: "Bei Fang Style", cat: "food", region: "sf", emoji: "🍜", note: "Northern Chinese in Outer Sunset. Noodle soup fave, dumplings good. (TC Pastry next door for the rest.)", query: "Bei Fang Style San Francisco", web: "https://beifangstylesf.com/", ll: [37.753, -122.504] },
 
   // ---------------- Cafe / Dessert Spots ----------------
   { id: "arsicault", name: "Arsicault Bakery", cat: "dessert", region: "sf", emoji: "🥐", note: "Some of the best croissants in the country, no joke.", query: "Arsicault Bakery San Francisco", ll: [37.7826, -122.4597] },
-  { id: "hinrg", name: "Hi NRG", cat: "coffee", region: "sf", note: "A cafe I like — solid pick-me-up stop.", query: "Hi NRG cafe San Francisco", ll: [37.77, -122.43] },
-  { id: "goldengoat", name: "Golden Goat", cat: "coffee", region: "sf", note: "Easy coffee stop I like.", query: "Golden Goat Coffee San Francisco", ll: [37.762, -122.444] },
+  { id: "hinrg", name: "Hi NRG", cat: "coffee", region: "sf", note: "Inner Richmond cafe — DAK espresso was guud, Terraform pour-over was great!!", query: "Hi NRG Coffee San Francisco", web: "http://hinrg.net/", ll: [37.780, -122.464] },
+  { id: "goldengoat", name: "Golden Goat Coffee", cat: "coffee", region: "sf", emoji: "🐐", note: "South Beach — the B&W New School is one of my all-time faves.", query: "Golden Goat Coffee San Francisco", web: "http://goldengoatcoffee.com/", ll: [37.783, -122.390] },
+
+  // ---------------- Coffee / Matcha (from Beli) ----------------
+  { id: "wildfox", name: "The Wild Fox", cat: "coffee", region: "sf", emoji: "🦊", note: "FiDi. Rotating beans from great roasters — pour-overs are great (haven't tried espresso yet).", query: "The Wild Fox San Francisco", web: "http://thewildfoxsf.com/", ll: [37.792, -122.401] },
+  { id: "porter", name: "The Pop-Up by Porter", cat: "coffee", region: "sf", note: "Levi's Plaza / Northern Waterfront. Onyx coffee!!!", query: "The Pop-Up by Porter Levi's Plaza San Francisco", web: "https://byporter.com/levisplaza", ll: [37.803, -122.401] },
+  { id: "kissofmatcha", name: "Kiss of Matcha", cat: "coffee", region: "sf", emoji: "🍵", note: "Matcha + tea in North Beach.", query: "Kiss of Matcha San Francisco", web: "http://www.kissofmatcha.com/", ll: [37.800, -122.410] },
+  { id: "papersondogpatch", name: "Paper Son Coffee — Dogpatch", cat: "coffee", region: "sf", note: "Dogpatch. LETTY BURMEDEZ so good — love the Sunday pour-overs!! Bakery also guud.", query: "Paper Son Coffee Dogpatch San Francisco", web: "http://papersoncoffee.com/", ll: [37.760, -122.388] },
+  { id: "linea", name: "Linea Caffe", cat: "coffee", region: "sf", note: "Mission. House blend flat white.", query: "Linea Caffe San Francisco", web: "http://www.lineacaffe.com/", ll: [37.759, -122.419] },
+  { id: "homecoffee", name: "Home Coffee Roasters", cat: "coffee", region: "sf", note: "Coffee in Chinatown.", query: "Home Coffee Roasters San Francisco", web: "http://homecoffeesf.com/", ll: [37.796, -122.407] },
+  { id: "kissaten", name: "Kissaten HiFi", cat: "coffee", region: "sf", emoji: "🍵", note: "Presidio Terrace. Not usually into dessert drinks but the einspanner + turon matcha slay; hojicha p guud too.", query: "Kissaten HiFi San Francisco", ll: [37.787, -122.461] },
+  { id: "coffeemovement", name: "The Coffee Movement", cat: "coffee", region: "sf", note: "Nob Hill. Yum espresso drinks (matcha is bleh).", query: "The Coffee Movement San Francisco", web: "https://www.thecoffeemovement.com/", ll: [37.792, -122.413] },
+  { id: "papersondowntown", name: "Paper Son Coffee — Downtown", cat: "coffee", region: "sf", note: "Rincon Hill. Good matcha, espresso is just ok.", query: "Paper Son Coffee Downtown San Francisco", web: "http://papersoncoffee.com/", ll: [37.788, -122.391] },
   { id: "saltandstraw", name: "Salt & Straw", cat: "dessert", region: "sf", emoji: "🍦", note: "Fun, inventive ice cream flavors.", query: "Salt & Straw San Francisco", ll: [37.7847, -122.4339] },
   { id: "tadaima", name: "Tadaima", cat: "coffee", region: "sf", emoji: "🍵", note: "Cute Japanese cafe — matcha and treats.", query: "Tadaima San Francisco", ll: [37.781, -122.432] },
   { id: "stonemill", name: "Stonemill Matcha", cat: "coffee", region: "sf", emoji: "🍵", note: "My matcha spot in the Mission.", query: "Stonemill Matcha San Francisco", ll: [37.7595, -122.4212] },
